@@ -158,7 +158,8 @@ define([
               var toolTipTemplate = contrail.getTemplate4Id(cowc.TOOLTIP_TEMPLATE);
               return toolTipTemplate({
                 subTitle: chartOptions.subTitle,
-                yAxisLabel:chartOptions.yAxisLabel,
+                yAxisLabel :  (chartOptions.tooltipCustomTitle)? getValueByJsonPath(chartOptions, 'tooltipCustomTitle')
+                        : getValueByJsonPath(chartOptions, 'yAxisLabel'),
                 Time:tooltipData[0].Time,
                 tooltipData: tooltipData
             });
@@ -180,7 +181,8 @@ define([
             var toolTipTemplate = contrail.getTemplate4Id(cowc.TOOLTIP_LINEAREACHART_TEMPLATE);
             return toolTipTemplate({
                 subTitle: chartOptions.subTitle,
-                yAxisLabel:chartOptions.yAxisLabel,
+                yAxisLabel :  (chartOptions.tooltipCustomTitle)? getValueByJsonPath(chartOptions, 'tooltipCustomTitle')
+                        : getValueByJsonPath(chartOptions, 'yAxisLabel'),
                 Time:d.value,
                 series:series
             });
