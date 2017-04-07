@@ -471,7 +471,23 @@ globalObj['menuAccessFns'] = {
             return false;
         else
             return true;
-    }
+    },
+    showGlobalController: function() {
+        var region = contrail.getCookie('region');
+        if(region === cowc.GLOBAL_CONTROLLER_ALL_REGIONS) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    hideGlobalController: function() {
+        var region = contrail.getCookie('region');
+        if(region !== cowc.GLOBAL_CONTROLLER_ALL_REGIONS) {
+            return true;
+        } else {
+            return false;
+        }
+    }    
 }
 
 function strUtil() {

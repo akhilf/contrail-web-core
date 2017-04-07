@@ -84,7 +84,7 @@ define(['underscore'], function (_) {
                             'role;0', "", false);
                     var cgcEnabled = getValueByJsonPath(globalObj,
                             'webServerInfo;cgcEnabled', false, false);
-                    if(cgcEnabled && currentRole == "globalController"){
+                    if(cgcEnabled){
                         currPageHash = "mon_gc_globalcontroller";
                     } else if(webServerInfo['loggedInOrchestrationMode'] == 'vcenter') {
                         //If vCenter is the only orchestration model

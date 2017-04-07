@@ -163,7 +163,7 @@ define(['underscore'], function (_) {
                             }
                         }
                     }
-                    return (roleExists && orchExists && accessFnRetVal && !allRegion);
+                    return (roleExists && orchExists && accessFnRetVal);
             } else {
                 return true;
             }
